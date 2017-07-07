@@ -1,0 +1,36 @@
+{
+  "contract_name": "test",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "d",
+          "type": "uint256"
+        },
+        {
+          "name": "halvingcycle",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPhaseCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600b57fe5b5b5b5b608a8061001c6000396000f300606060405263ffffffff60e060020a6000350416639b3d9e4e81146020575bfe5b3415602757fe5b60336004356024356045565b60408051918252519081900360200190f35b60008183811515605157fe5b0460010190505b929150505600a165627a7a72305820c00be27538f4b859a99620973d31da75286b3918f93bd1c5ce3517510e4ad29a0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1499249918438
+}
