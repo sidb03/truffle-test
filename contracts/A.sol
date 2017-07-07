@@ -1,4 +1,4 @@
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.10;
 
 contract A {
 
@@ -42,10 +42,5 @@ function availableBalanceOf(uint256 factor,uint halvingCycle,uint inbalance,uint
     balance*=((1+factor/(2**i)))**min(halvingCycle,(safeSub(endDay,i*halvingCycle)+1));
   }
     return balance;
-    
 }
-
-
-
-
 }
