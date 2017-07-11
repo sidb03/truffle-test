@@ -10,8 +10,8 @@ contract('A', function(accounts) {
     });
     it("Should set factors", async function(){
       let aInstance= await A.new();
-      let result=(await aInstance.setFactor.call(10000,5000,2,3333)).valueOf();
-      let balance=(await aInstance.availableBalanceOf.call(result,88,359906409813,4,259,269)).valueOf();
+      let result=(await aInstance.setFactor.call(100000000000000000,50000000000000000,2,3333)).valueOf();
+      let balance=(await aInstance.availableBalanceOf.call(result,452895350633,1541)).valueOf();
       //let results= (await aInstance.availableBalanceOf.call(result,88,2007.8,4,100,110).logs).valueOf();
       console.log("Result is:",result);
       console.log("balance is:",balance);
