@@ -13,7 +13,7 @@
       "outputs": [
         {
           "name": "",
-          "type": "uint256"
+          "type": "256"
         }
       ],
       "payable": false,
@@ -28,7 +28,7 @@
         },
         {
           "name": "amount",
-          "type": "uint256"
+          "type": "256"
         }
       ],
       "name": "sendCoin",

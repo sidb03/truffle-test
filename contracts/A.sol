@@ -31,11 +31,8 @@ function A() {
 function setFactor(uint256 maxMintingPower,uint256 minMintingPower,uint256 contributionId,uint256 maxAddresses) returns (uint256){
   uint256 factor=(maxMintingPower-(contributionId*(maxMintingPower-minMintingPower)/maxAddresses));
   return factor;
-  //  uint256 cent=77;
-  //uint256 cent1=10**cent;
-  //return cent1;
 }
-event returned(uint balance,uint inPhase,uint enPhase);
+event returned(uint balance);
 function availableBalanceOf(uint256 factor,uint256 halvingCycle,uint256 inbalance,uint256 decimals,uint256 startDay,uint endDay) returns (uint256){
     //Cant get of specified 2 days. Need the block timestamp of both the days.
     uint256 inPhase=getPhaseCount(startDay)-1;
@@ -45,18 +42,15 @@ function availableBalanceOf(uint256 factor,uint256 halvingCycle,uint256 inbalanc
     balance=inbalance;
    // for(uint j=1;j<=7;j++)
    // {
-    balance=(balance*((10**(decimals+2)+factor/(2**inPhase))**power))/10**(power*7);
+    balance=(balance*((10**(decimals+2)+factor/(2**inPhase))**power))/10**(power*6);
     //}
     
   for(uint256 i=inPhase+1;i<=enPhase;i++)
   {
-    balance=(balance*((10**(decimals+2)+factor/(2**i)))**min(halvingCycle,(safeSub(endDay,i*halvingCycle)+1)))/10**(min(halvingCycle,(safeSub(endDay,i*halvingCycle)+1))*5);
+    balance=(balance*((10**(decimals+2)+factor/(2**i)))**min(halvingCycle,(safeSub(endDay,i*halvingCycle)+1)))/10**(min(halvingCycle,(safeSub(endDay,i*halvingCycle)+1))*4);
   }
-  returned(balance,inPhase,enPhase);
-  return balance;
-
-   //
-   // return ((10**(decimals+2))+factor/(2**inPhase))**min((safeSub(safeSub(halvingCycle*(inPhase+1),startDay),1)),getDayCount());
+  returned(balance);
+  return ;
 }
 }
 
